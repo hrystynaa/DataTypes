@@ -1,9 +1,7 @@
 'use strict';
 
-const inc = function(obj) {
-  obj.n++;
+const inc = (obj) => {
+  if (typeof obj === 'object') ++obj.n;
 };
-const obj = { n: 5 };
-inc(obj);
-console.dir(obj);
+
 module.exports = { inc };

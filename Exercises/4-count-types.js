@@ -1,13 +1,12 @@
 'use strict';
 
-const countTypesInArray = (arr) => {
-  const counters = {};
-  for   (const element of arr) {
-    const type = typeof element;
-    const count = counters[type] || 0;
-    counters[type] = count + 1;
+const countTypesInArray = (obj) => {
+  const hash = {};
+  for (const value of obj) {
+    if (hash[typeof(value)]) ++hash[typeof(value)];
+    else hash[typeof(value)] = 1;
   }
-  return counters;
+  return hash;
 };
 
 module.exports = { countTypesInArray };
